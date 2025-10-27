@@ -1,0 +1,100 @@
+/* ======================================
+   RESET & BASE STYLES
+   ====================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+/* ======================================
+   COLOR VARIABLES 
+   ====================================== */
+:root {
+  /* Primary - Purple */
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-light: #eef2ff;
+
+  /* Background */
+  --bg-color: #f8f9fb;
+  --card-bg: #ffffff;
+
+  /* Text */
+  --text-primary: #1a1a2e;
+  --text-secondary: #6b7280;
+
+  /* Border */
+  --border-color: #e5e7eb;
+
+  /* Status colors */
+  --error-color: #ef4444;
+  --success-color: #31a24c;
+  --warning-color: #f7b500;
+
+  /* Sidebar */
+  --sidebar-bg: #ffffff;
+  --sidebar-hover: #f3f4f6;
+  --sidebar-active: #e8e9fc;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================================
+   DARK MODE
+   ====================================== */
+.dark {
+  --bg-color: #18191a;
+  --card-bg: #1f2022;
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+
+  --border-color: #3f3f46;
+
+  --primary-color: #818cf8;
+  --primary-hover: #6366f1;
+  --primary-light: rgba(99, 102, 241, 0.15);
+
+  --sidebar-bg: #1f2022;
+  --sidebar-hover: #27282b;
+  --sidebar-active: #32334a;
+
+  --shadow-sm: 0 1px 2px rgba(255, 255, 255, 0.05);
+  --shadow-md: 0 2px 4px rgba(255, 255, 255, 0.08);
+  --shadow-lg: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* ======================================
+   SCROLLBAR STYLING
+   ====================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}

@@ -1,0 +1,198 @@
+/* Container chính - căn giữa màn hình */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  padding: 20px;
+}
+
+/* Box chứa form */
+.login-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 40px 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Header - Logo & Tagline */
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  font-family: "Brush Script MT", cursive;
+}
+
+.tagline {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Form Styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: var(--bg-color);
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: white;
+}
+/* Show password button */
+.toggle-password {
+  position: absolute;
+  top: 8px;
+  height: 28px;
+  right: 20px;
+  width: 28px;
+}
+
+/* Error Message */
+.error-message {
+  color: var(--error-color);
+  font-size: 13px;
+  text-align: center;
+  margin: 5px 0;
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.login-button:active {
+  transform: scale(0.98);
+}
+
+/*Remember Me checkbox */
+.remember-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-bottom: -5px;
+}
+
+.remember-label {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  accent-color: var(--primary-color); /* màu chủ đạo */
+  cursor: pointer;
+}
+
+.remember-label:hover {
+  color: var(--text-primary);
+}
+/* Forgot Password Link */
+.forgot-password {
+  text-align: center;
+  display: block;
+  color: var(--primary-color);
+  font-size: 13px;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 25px 0;
+  color: var(--text-secondary);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.divider span {
+  padding: 0 15px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Register Section */
+.register-section {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.register-section a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-section a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .logo {
+    font-size: 36px;
+  }
+}

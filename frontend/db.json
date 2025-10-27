@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "password123",
+      "fullName": "John Doe",
+      "avatar": "https://i.pravatar.cc/150?img=1",
+      "bio": "Living my best life 🌟"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "image": "https://picsum.photos/600/600?random=1",
+      "caption": "Beautiful sunset 🌅",
+      "likes": 1234,
+      "comments": [],
+      "timestamp": "2024-01-15T10:30:00Z",
+      "isLiked": false,
+      "isSaved": false
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "image": "https://picsum.photos/600/600?random=2",
+      "caption": "Good vibes only ✨",
+      "likes": 892,
+      "comments": [],
+      "timestamp": "2024-01-14T15:20:00Z",
+      "isLiked": false,
+      "isSaved": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "userId": 1,
+      "text": "Amazing photo!",
+      "timestamp": "2024-01-15T11:00:00Z"
+    }
+  ]
+}

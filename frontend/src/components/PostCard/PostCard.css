@@ -1,0 +1,337 @@
+.post-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+/* Post Header */
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+.post-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.post-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-username {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.post-username:hover {
+  text-decoration: underline;
+}
+
+.post-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  padding: 8px;
+  transition: opacity 0.2s;
+}
+
+.post-menu-btn:hover {
+  opacity: 0.6;
+}
+
+/* Post Media (Ảnh hoặc Video) */
+.post-media {
+  position: relative;
+  width: 100%;
+  background: #000;
+  cursor: pointer;
+  overflow: hidden;
+
+  /* bỏ aspect-ratio cố định */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Áp dụng cho ảnh hoặc video */
+.post-media img,
+.post-media video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* không bị crop */
+  display: block;
+  user-select: none;
+  border-radius: 0;
+}
+/* Like Animation (Heart khi double click) */
+.like-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: likeAnimation 0.6s ease-out;
+}
+
+@keyframes likeAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Post Actions */
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.post-actions-left {
+  display: flex;
+  gap: 16px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  padding: 8px;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  opacity: 0.6;
+}
+
+.action-btn:active {
+  transform: scale(0.9);
+}
+
+/* Like button khi đã like */
+.action-btn.liked {
+  color: var(--error-color);
+  animation: likeButton 0.4s ease;
+}
+
+@keyframes likeButton {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* Save button khi đã save */
+.action-btn.saved {
+  color: var(--text-primary);
+}
+
+/* Post Info */
+.post-info {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.post-likes {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.post-caption {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin: 0 0 5px 5px;
+  line-height: 1.4;
+}
+
+.post-caption strong {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.view-comments {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.view-comments:hover {
+  color: var(--text-primary);
+}
+
+.post-timestamp {
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+/* Add Comment */
+.post-add-comment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.comment-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.comment-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.comment-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.comment-input:not(:placeholder-shown) ~ .comment-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.comment-btn:hover {
+  color: var(--primary-hover);
+}
+
+/* Comments Section */
+.comments-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.comment-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.comment-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.comment-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.comment-text {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.comment-text strong {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.comment-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.comment-timestamp,
+.comment-likes {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.comment-reply {
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.comment-reply:hover {
+  color: var(--text-primary);
+}
+
+.comment-like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.comment-like-btn:hover {
+  opacity: 0.6;
+}
+
+/* Update comment button state */
+.comment-btn:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .post-card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 8px;
+  }
+}
